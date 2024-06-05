@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ContaTerminal {
@@ -15,20 +16,24 @@ public class ContaTerminal {
 
         // Solicita os dados do usuário
         System.out.println("Por favor, digite o número da Agência:");
-        String agencia = sc.nextLine();
+        String agencia;
+        agencia = sc.next();
+
 
         System.out.println("Por favor, digite o número da Conta:");
         int numero = sc.nextInt();
-        sc.nextLine(); // Limpa o buffer do scanner
+        sc.nextLine(); 
 
         System.out.println("Por favor, digite o nome do Cliente:");
         String nomeCliente = sc.nextLine();
 
         System.out.println("Por favor, digite o saldo:");
         double saldo = sc.nextDouble();
+		Locale.setDefault(Locale.US);
+
 
         // Exibe a mensagem de confirmação
-        System.out.println("Olá " + nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia + ", conta " + numero + " e seu saldo " + saldo + " já está disponível para saque.");
+        System.out.println("Olá " + nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia + ", conta" + numero + " e seu saldo " + saldo + " já está disponível para saque.");
 
         // Fecha o scanner
         sc.close();
